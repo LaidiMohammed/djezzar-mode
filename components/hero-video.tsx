@@ -12,7 +12,7 @@ export default function HeroVideo() {
   // ——— Scroll-driven zoom: video zooms OUT, giant title zooms IN ———
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 0.86]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
-  const shadeOpacity = useTransform(scrollYProgress, [0, 1], [0.25, 0.9]);
+  const shadeOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.85]);
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -140]);
   const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.88]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
@@ -20,24 +20,23 @@ export default function HeroVideo() {
   const giantOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 0.15]);
 
   return (
-    <section ref={ref} className="relative min-h-[110vh] flex items-end overflow-hidden grain">
-      {/* ——— NEW video background (fashion men) ——— */}
-      <motion.div style={{ scale: videoScale, y: videoY }} className="absolute inset-0 will-change-transform">
+    <section ref={ref} className="relative min-h-[110vh] flex items-end overflow-hidden">
+      {/* ——— Video background, crystal clear (no grain, no blur) ——— */}
+      <motion.div style={{ scale: videoScale, y: videoY }} className="absolute inset-0">
         <motion.video
           autoPlay muted loop playsInline preload="auto"
           poster="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600&q=80&auto=format&fit=crop"
           className="w-full h-full object-cover"
-          initial={{ scale: 1.28 }}
-          animate={{ scale: 1.08 }}
-          transition={{ duration: 2.8, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <source src="https://videos.pexels.com/video-files/15615496/15615496-hd_1920_1080_60fps.mp4" type="video/mp4" />
           <source src="https://videos.pexels.com/video-files/15615496/15615496-hd_1280_720_60fps.mp4" type="video/mp4" />
           <source src="https://videos.pexels.com/video-files/7677252/7677252-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </motion.video>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/30 to-ink" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-ink/40" />
-        <motion.div style={{ opacity: shadeOpacity }} className="absolute inset-0 bg-ink" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+        <motion.div style={{ opacity: shadeOpacity }} className="absolute inset-0 bg-ink pointer-events-none" />
       </motion.div>
 
       {/* giant street title — zooms IN on scroll */}
