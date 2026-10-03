@@ -14,8 +14,8 @@ const shapeClass: Record<Product['shape'], string> = {
 export default function ArchCard({ p, index = 0 }: { p: Product; index?: number }) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 60, scale: 0.92 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.8, delay: (index % 4) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group"

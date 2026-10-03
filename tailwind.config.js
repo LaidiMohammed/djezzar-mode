@@ -17,6 +17,8 @@ module.exports = {
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        street: ['Anton', '"Arial Black"', 'sans-serif'],
+        editorial: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
       },
       animation: {

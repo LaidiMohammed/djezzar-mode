@@ -48,8 +48,9 @@ export default function APropos() {
 
       {/* video strip */}
       <div className="mt-12 relative overflow-hidden rounded-[2.5rem] border border-gold/25 min-h-[420px] grid place-items-center">
-        <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover">
-          <source src="https://videos.pexels.com/video-files/6060027/6060027-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600&q=80&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover">
+          <source src="https://videos.pexels.com/video-files/15615496/15615496-hd_1280_720_60fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/7677252/7677252-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-ink/60" />
         <p className="relative font-display text-4xl md:text-6xl text-center px-6 italic">Fashion men — <span className="text-gold">l’attitude runway,</span><br />dans la rue de Batna.</p>
